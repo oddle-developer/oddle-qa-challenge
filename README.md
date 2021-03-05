@@ -8,12 +8,12 @@
 
 ## General info
 
-End-to-end integration testing for One-time Donation flow of $5 flow of [https://stripe-samples.github.io/github-pages-stripe-checkout/](https://stripe-samples.github.io/github-pages-stripe-checkout/). 
+End-to-end integration testing for One-time $5 Donation flow on [Stripe Demo Site](https://stripe-samples.github.io/github-pages-stripe-checkout/). 
 
 
 ## Requirements
 
-You are required to come up with both the testing plan and automated test suites for the following user journey
+You are required to come up with the testing plan and automated test suites for the following user journey
 One-time Donation flow of $5.
 
 You may write a set of automated testing suites using any of the following tools
@@ -22,16 +22,19 @@ You may write a set of automated testing suites using any of the following tools
 - Webdriver.io
 - Selenium
 
+Note: We use Webdriver.io for end-to-end integration testing and POSTMAN for API testing.
+
 The following card details should be included as part of your test scenarios.
 
 |Scenario|Number|CVC|Date|
 |---|---|---|---|
-|Without 3D secure Verfication|4242 4242 4242 4242|High|Any 3 digits|Any future date|
+|Without 3D secure Verfication|4242 4242 4242 4242|Any 3 digits|Any future date|
 |||||
-|With 3D secure Verfication|4000 0000 0000 3220|High|Any 3 digits|Any future date
+|With 3D secure Verfication|4000 0000 0000 3220|Any 3 digits|Any future date
 
-Instructions on how to run your test suites should be included as part of the READ.me
-
+Please include the following in the submission of the assignment
+- Instructions on how to run your test suites should be included as part of the README.md
+- Test results of the automated test suites 
 
 ## Submission Steps
 
