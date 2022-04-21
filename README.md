@@ -22,7 +22,7 @@ You may write a set of automated testing suites using any of the following tools
 - Webdriver.io
 - Selenium
 
-Note: We use Webdriver.io for end-to-end integration testing and POSTMAN for API testing.
+Note: We use Webdriver.io/Cypress for end-to-end integration testing and Postman/RestAssured for API testing.
 
 The following card details should be included as part of your test scenarios.
 
@@ -38,7 +38,8 @@ Please include the following in the submission of the assignment
 
 ## Submission Steps
 
-* Submit your assignment by creating a repository on your Github account
+* Submit your assignment by creating a repository on your Github account. Name your repository as `oddle-qa-challenge`
+* Include the following details in your README file: full name, email address and where did you apply from
 * Code. Commit and Push as many times as you want, only the last Pull Request will be graded
 * Create a Pull Request in your private repo and invite us as reviewer
 * Add https://github.com/oddle-developer as collaborator for your repo and add `oddle-developer` as reviewer to your PR
