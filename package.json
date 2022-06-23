@@ -1,0 +1,29 @@
+{
+  "name": "oddle-qa-challenge",
+  "version": "1.0.0",
+  "description": "**Welcome to Oddle Challenge**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firmanserdana/oddle-qa-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/firmanserdana/oddle-qa-challenge/issues"
+  },
+  "homepage": "https://github.com/firmanserdana/oddle-qa-challenge#readme",
+  "dependencies": {
+    "cypress": "^10.2.0",
+    "cypress-dotenv": "^2.0.0",
+    "dotenv": "^16.0.1",
+    "pretty": "^2.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
