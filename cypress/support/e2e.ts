@@ -15,6 +15,21 @@
 
 // Import commands.js using ES2015 syntax:
 import '../components/common/commands'
+import { envVariables } from "../components/env/envVariables";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+if (Cypress.env('HEALTH_CHECK_SKIP') === true) {
+    before(() => {
+      cy.log('Skipping Health Check');
+    });
+  } else {
+    before(() => {
+        cy.request(envVariables.mainurl)
+        .its('isOkStatusCode')
+        .should('be.true')
+        .request(envVariables.paymenturl)
+        .its('isOkStatusCode')
+        .should('be.true');
+    })};

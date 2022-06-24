@@ -4,6 +4,7 @@ const dotenvPlugin = require('cypress-dotenv');
 
 export default defineConfig({
   e2e: {
+    experimentalSessionAndOrigin: false,
     setupNodeEvents(on, config) {
       // implement node event listeners here
   config.env = process.env;
