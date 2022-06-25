@@ -13,11 +13,14 @@ describe('Donate Once 5$', () => {
 
   it('Main Page Component Check', () => {
    cy.visit(envVariables.mainurl);
-    mainpage.PageComponentCheck();
+    mainpage.PageComponentCheck(); 
   })
 
   it('Payment Page Component Check', () => {
-   
+    cy.task("getCheckoutURL").then((url) => {
+      cy.log(url);
+      cy.visit(url);
+    })
   })
 
   it('Payment failed', () => {
