@@ -6,12 +6,20 @@ class paymentpage {
     static cardNumberField = '#cardNumber';
     static cardExpiry = '#cardExpiry';
     static cardCVC = '#cardCvc';
+    static cardSet = '#cardNumber-fieldset';
+    static cardAlert = '[role="alert"]';
     static billingName = '#billingName';
     static billingCountry = '#billingCountry';
     static signUp = '#enableStripePass';
     static phoneNumber ='#phoneNumber';
-    static payButton = '[data-testid="hosted-payment-submit-button"]'
-    static paymentConfirmationText = '[data-testid="ConfirmPaymentTermsText"]'
+    static payButton = '[data-testid="hosted-payment-submit-button"]';
+    static paymentConfirmationText = '[data-testid="ConfirmPaymentTermsText"]';
+    static emailRedmessage = '#required-email-fieldset';
+    static cardRedmessage = '#required-cardNumber-fieldset';
+    static nameRedmessage = '#required-billingName-fieldset';
+    static sessionId = '#session';
+    static challengeIframe = '#challengeFrame';
+    static challengeOkButton = '#test-source-authorize-3ds';
     
     public static PageComponentCheck(totalammount: string, summaryofProduct: string): void{
         cy.get(this.backButton).should('be.visible');
@@ -30,3 +38,5 @@ class paymentpage {
         cy.get(this.paymentConfirmationText).should('not.be.visible');
     }
 }
+
+export default paymentpage;

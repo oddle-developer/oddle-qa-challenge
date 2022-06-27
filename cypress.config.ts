@@ -1,6 +1,8 @@
 import { defineConfig } from "cypress";
 import mainpage from "./cypress/components/unit/mainpage";
 import cypress = require("cypress");
+import { envVariables } from "./cypress/components/env/envVariables";
+
 
 const dotenvPlugin = require('cypress-dotenv');
 const puppeeter = require('puppeteer');
@@ -14,13 +16,13 @@ export default defineConfig({
   config.env = process.env;
 
       on('task', {
-        getCheckoutURL: () => {
+        getCheckoutURL: (mainurl) => {
           return (async () => {
         
-        const browser = await puppeeter.launch({ headless: false });
+        const browser = await puppeeter.launch({ headless: true });
         const page = await browser.newPage();
 
-        await page.goto('https://stripe-samples.github.io/github-pages-stripe-checkout/');
+        await page.goto(mainurl);
         await page.click(mainpage.Donation5$);
         await page.waitForNavigation();
 
