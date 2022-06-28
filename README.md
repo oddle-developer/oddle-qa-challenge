@@ -22,7 +22,7 @@
 - *for m1 mac users only*, changes `PUPPETEER_EXECUTABLE_PATH` in `.env` files into your Google Chrome Path
 - `yarn install` to install dependencies
 - use `yarn test-run` to run the cypress headless-ly
-- use `yarn test-open` to use the interactive cypress Github
+- use `yarn test-open` to use the interactive cypress GUI
 
 ## Test Scenario - General Explanation
 
