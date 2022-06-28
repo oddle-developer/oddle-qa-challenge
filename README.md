@@ -1,45 +1,37 @@
 # Oddle QA Challenge
 
-**Welcome to Oddle Challenge**
+**Oddle Challenge - by Firman Isma Serdana**
 
-* [General info](#general-info)
-* [Requirements](#requirements)
-* [Notes](#notes)
+* [Personal Info](#personal-info)
+* [How to use the code](#how-to-use-the-code)
+* [Test Scenario - General Explanation](#test-scenario---general-explanation)
+* [Test Results](#test-results)
 
-## General info
+## Personal Info
 
-End-to-end integration testing for One-time $5 Donation flow on [Stripe Demo Site](https://stripe-samples.github.io/github-pages-stripe-checkout/). 
+*Name*: Firman Isma Serdana
+*Email Address*: firman.serdana18@alumni.imperial.ac.uk
+*Applied from*: Linkedin
+*Linkedin*: [in/firmaniserdana](https://www.linkedin.com/in/firmaniserdana)
 
+## How to use the code
 
-## Requirements
+- make sure [npm](https://www.npmjs.com/) and [yarn](https://yarnpkg.com/) is already installed
+- `git clone` this repo
+- rename `.env.example` into `.env`
+- *for m1 mac users only*, changes `PUPPETEER_EXECUTABLE_PATH` in `.env` files into your Google Chrome Path
+- `yarn install` to install dependencies
+- use `yarn test-run` to run the cypress headless-ly
+- use `yarn test-open` to use the interactive cypress GUI
 
-You are required to come up with the testing plan and automated test suites for the following user journey
-One-time Donation flow of $5.
+## Test Scenario - General Explanation
 
-You may write a set of automated testing suites using any of the following tools
+* main-page component check = check if all components are loaded normally in main page
+* 5$ donation-page component check = same as above
+* Payment Failed - Required Fields = not filling the required fields, but attempt to proceed with payment
+* Payment Failed - Using Non Test Card = using real live card to see if the payment will be proceed (it shouldn't)
+* Using non-3D Secure Card - Positive Scenario = using non-3D secure test card to proceed payment
+* Using 3D Secure Card - Positive Scenario = using non-3D secure test card to proceed payment
 
-- Cypress
-- Webdriver.io
-- Selenium
-
-Note: We use Webdriver.io/Cypress for end-to-end integration testing and Postman/RestAssured for API testing.
-
-The following card details should be included as part of your test scenarios.
-
-|Scenario|Number|CVC|Date|
-|---|---|---|---|
-|Without 3D secure Verfication|4242 4242 4242 4242|Any 3 digits|Any future date|
-|||||
-|With 3D secure Verfication|4000 0000 0000 3220|Any 3 digits|Any future date
-
-Please include the following in the submission of the assignment
-- Instructions on how to run your test suites should be included as part of the README.md
-- Test results of the automated test suites 
-
-## Submission Steps
-
-* Submit your assignment by creating a repository on your Github account. Name your repository as `oddle-qa-challenge`
-* Include the following details in your README file: full name, email address and where did you apply from
-* Code. Commit and Push as many times as you want, only the last Pull Request will be graded
-* Create a Pull Request in your private repo and invite us as reviewer
-* Add https://github.com/oddle-developer as collaborator for your repo and add `oddle-developer` as reviewer to your PR
+## Test Results
+Test results will be saved in `cypress/results` and `cypress/videos` after using `yarn test-run`
