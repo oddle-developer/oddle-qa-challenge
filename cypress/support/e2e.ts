@@ -14,9 +14,10 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import '../components/common/commands';
+import './commands';
 import { envVariables } from "../components/env/envVariables";
 import 'cypress-iframe';
+import 'cypress-xpath';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

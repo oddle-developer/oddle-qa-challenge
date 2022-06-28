@@ -21,6 +21,7 @@
     "cypress": "^10.2.0",
     "cypress-dotenv": "^2.0.0",
     "cypress-iframe": "^1.0.1",
+    "cypress-xpath": "^2.0.0",
     "dotenv": "^16.0.1",
     "pretty": "^2.0.0",
     "puppeteer": "^15.1.0"

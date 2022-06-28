@@ -36,41 +36,11 @@
 //   }
 // }
 
-Cypress.Commands.add("processStripeSCA", (action) => {
 
-
-    //Find the first frame - Named differently each load ( __privateStripeFrameXXXX )
-    cy.get("iframe[name*='__privateStripeFrame']")
-        .within(($element) => {
-
-            //Get the body from the first frame
-            const $body = $element.contents().find("body");
-            let topLevel = cy.wrap($body)
-
-            //Find the second frame
-            topLevel.find("iframe[name*='__stripeJSChallengeFrame']")
-                .within(($secondElement) => {
-
-                    //Get the body from the second frame
-                    const $secondBody = $secondElement.contents().find("body");
-                    let secondLevel = cy.wrap($secondBody)
-
-                    //Find the third frame -  acsFrame
-                    secondLevel.find("iframe[name*='acsFrame']")
-
-
-                        //Scope into the actual modal
-                        .within(($thirdElement) => {
-
-                            //Grab the URL of the stripe popup, then have puppeteer browse to it!
-                            cy.task('processSCA', {url: $thirdElement[0]["baseURI"], action: action});
-
-
-                        })
-
-
-                })
-
-        })
-
- })
+Cypress.Commands.add('iframeCustom', { prevSubject: 'element' }, ($iframe) => {
+  return new Cypress.Promise((resolve) => {
+    $iframe.ready(function () {
+      resolve($iframe.contents().find('body'));
+    });
+  })
+});
