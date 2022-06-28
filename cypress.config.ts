@@ -11,6 +11,10 @@ export default defineConfig({
   e2e: {
     experimentalSessionAndOrigin: false,
     chromeWebSecurity: false,
+    reporter: "cypress-multi-reporters",
+    reporterOptions: {
+      "configFile": "./reporter-config.json"
+    },
     setupNodeEvents(on, config) {
       // implement node event listeners here
   config.env = process.env;

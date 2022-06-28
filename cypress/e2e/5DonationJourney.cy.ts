@@ -1,10 +1,8 @@
-import { envVariables } from './../components/env/envVariables';
 import { envVariables } from '../components/env/envVariables';
 import mainpage from '../components/unit/mainpage';
 import paymentpage from '../components/unit/paymentpage'
 import Idonation from '../fixtures/donation';
 import { faker } from '@faker-js/faker';
-import { scahelper }  from '../support/scahelper';
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false;
@@ -101,7 +99,7 @@ describe('Donate Once 5$', () => {
     }); 
   })
 
-  it.only('Using 3D Secure Card - Positive Scenario', () => {
+  it('Using 3D Secure Card - Positive Scenario', () => {
    cy.intercept('POST', envVariables.apimainurl+'payment_pages/**').as('paymentpage');
     cy.task("getCheckoutURL", envVariables.mainurl, { timeout: 50000 }).then((generatedurl) => {
       url = generatedurl;
