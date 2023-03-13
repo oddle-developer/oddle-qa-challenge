@@ -1,0 +1,97 @@
+
+Name: Maryl Marie Sara
+Email: marylvsara@gmail.com
+LinkedIn: https://www.linkedin.com/jobs/view/3123178190
+
+# Checkout Flow
+
+## Test cases
+
+### ID: 01
+
+**Title:** A user should be able to donate $5 without 3D secure verification
+
+**Precondition:**
+
+- A user is on the https://stripe-samples.github.io/github-pages-stripe-checkout/ page
+
+**Data to enter:**
+
+- Country or region: `Singapore`
+- Name on card: `Oddle QA`
+- Card number: `4242 4242 4242 4242`
+- Card CVC: `358`
+- Card expiration date: `01/20/2023`
+
+| # | **Step description** | **Expected result** |
+| --- | --- | --- |
+| 1 | Enter email | A user enters his/her email. <br /> The email address is prefilled in the email input |
+| 2 | Enter the card information | The card information pop up validation displayed |
+| 3 | Enter MM/YY | A user enters card expiry date. <br /> 
+| 4 | Enter CVC | A user enters card CVC. <br /> 
+| 5 | Enter Name on card | A user enters given name on card. <br /> 
+| 6 | Selects country | A dropdown list of countries will open <br /> 
+| 7 | Save info | A tickbox will will open and number field <br /> 
+| 8 | Enter mobile number | A user enters in number field <br /> 
+| 9 | Click pay | A user can checkout <br /> 
+
+In Gherkin Method:
+        Given the user is in the check out page
+        When the user inputs email
+        And user enters month and year in the field
+        And user enters "<card number>" in the card number field
+        And the user enters "<card cvc>" in the card cvc field
+        And the user enters "<card exp. date>" in the card exp date field
+
+        When the user enters name on card
+        And user enters a country or region
+        When user clicks save my info
+        And user enters mobile phone number
+        And the user clicks on the pay button
+        When the user enters CAPTCHA
+        Then the transaction should be successful
+
+### ID: 02
+
+**Title:** A user should be able to donate $5 with 3D secure verification
+
+**Precondition:**
+
+- A user is on the https://stripe-samples.github.io/github-pages-stripe-checkout/ page
+
+**Data to enter:**
+
+- Country or region: `Singapore`
+- Name on card: `Oddle QA`
+- Card number: `4242 4242 4242 4242`
+- Card CVC: `358`
+- Card expiration date: `01/20/2023`
+
+| # | **Step description** | **Expected result** |
+| --- | --- | --- |
+| 1 | Enter email | A user enters his/her email. <br /> The email address is prefilled in the email input |
+| 2 | Enter the card information | The card information pop up validation displayed |
+| 3 | Enter MM/YY | A user enters card expiry date. <br /> 
+| 4 | Enter CVC | A user enters card CVC. <br /> 
+| 5 | Enter Name on card | A user enters given name on card. <br /> 
+| 6 | Selects country | A dropdown list of countries will open <br /> 
+| 7 | Save info | A tickbox will will open and number field <br /> 
+| 8 | Enter mobile number | A user enters in number field <br /> 
+| 9 | Enter CAPTCHA | A user enters given captcha <br /> 
+| 10 | Click pay | A user can checkout <br /> 
+
+In Gherkin Method:
+        Given the user is in the check out page
+        When the user inputs email
+        And user enters month and year in the field
+        And user enters "<card number>" in the card number field
+        And the user enters "<card cvc>" in the card cvc field
+        And the user enters "<card exp. date>" in the card exp date field
+
+        When the user enters name on card
+        And user enters a country or region
+        When user clicks save my info
+        And user enters mobile phone number
+        And the user clicks on the pay button
+        When the user enters CAPTCHA
+        Then the transaction should be successful
