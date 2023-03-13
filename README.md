@@ -34,10 +34,11 @@ The following card details should be included as part of your test scenarios.
 Please include the following in the submission of the assignment
 - Instructions on how to run your test suites should be included as part of the README.md
 - Test results of the automated test suites 
+- A test plan documentation describing your test cases in details
 
 ## Submission Steps
 
-* Submit your assignment by creating a repository on your Github account. Name your repository as `oddle-qa-challenge`
+* Create a repository on your Github account. Name your repository as `oddle-qa-challenge`
 * Include the following details in your README file: full name, email address and where did you apply from
 * Code. Commit and Push as many times as you want, only the last Pull Request will be graded
 * Create a Pull Request in your private repo and invite us as reviewer
