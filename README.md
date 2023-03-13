@@ -20,9 +20,8 @@ You may write a set of automated testing suites using any of the following tools
 
 - Cypress
 - Webdriver.io
-- Selenium
 
-Note: We use Webdriver.io/Cypress for end-to-end integration testing and Postman/RestAssured for API testing.
+Note: We use Cypress for end-to-end integration testing and Postman/RestAssured for API testing.
 
 The following card details should be included as part of your test scenarios.
 
